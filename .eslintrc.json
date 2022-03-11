@@ -1,0 +1,55 @@
+{
+    "root": true,
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "es6": true,
+        "commonjs": true,
+        // use for es6 and nodejs environments
+        "node": true
+    },
+    "extends": [
+        "google",
+        "eslint:recommended",
+        "plugin:prettier/recommended",
+        "plugin:node/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": ["prettier", "unicorn"],
+    "rules": {
+        "strict": ["error", "global"],
+        "no-var": "error",
+        "curly": "off",
+        "semi": ["error"],
+        "no-tabs": ["off", "always"],
+        "new-cap": "off",
+        "require-jsdoc": "off",
+        "no-param-reassign": ["error", { "props": true }],
+        "no-use-before-define": [
+            "error",
+            { "functions": false, "variables": false }
+        ],
+        "no-console": ["error", { "allow": ["time", "timeEnd"] }],
+        "comma-dangle": ["error", "never"],
+        "max-len": [
+            "error",
+            {
+                "code": 125,
+                "ignoreComments": true,
+                "ignoreTrailingComments": true,
+                "ignoreUrls": true,
+                "ignoreStrings": true,
+                "ignoreTemplateLiterals": true,
+                "ignorePattern": "^\\s*var\\s.+=\\s*require\\s*\\("
+            }
+        ],
+        "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+        "complexity": ["warn", 6],
+        "import/no-extraneous-dependencies": 0,
+        "require-atomic-updates": 0,
+        "unicorn/filename-case": ["error", { "case": "camelCase" }]
+    }
+}

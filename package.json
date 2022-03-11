@@ -1,0 +1,51 @@
+{
+    "name": "boilerplate_be",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "format:check": "prettier --check .",
+        "format:write": "prettier --write .",
+        "lint:check": "eslint .",
+        "lint:fix": "eslint --fix .",
+        "dev": "nodemon src/index.js",
+        "postinstall": "link-module-alias"
+    },
+    "_moduleAliases": {
+        "api": "./src/api"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "eslint": "^8.10.0",
+        "eslint-config-google": "^0.14.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-unicorn": "^41.0.0",
+        "nodemon": "^2.0.15",
+        "prettier": "^2.5.1"
+    },
+    "dependencies": {
+        "ajv": "^8.10.0",
+        "ajv-errors": "^3.0.0",
+        "ajv-formats": "^2.1.1",
+        "dotenv": "^16.0.0",
+        "env-schema": "^3.5.2",
+        "fastify": "^3.27.4",
+        "fastify-autoload": "^3.11.0",
+        "fastify-cors": "^6.0.3",
+        "fastify-formbody": "^5.2.0",
+        "fastify-helmet": "^7.0.1",
+        "fastify-plugin": "^3.0.1",
+        "fastify-swagger": "^5.0.0",
+        "json-stringify-safe": "^5.0.1",
+        "link-module-alias": "^1.2.0",
+        "lodash": "^4.17.21",
+        "make-promises-safe": "^5.1.0",
+        "pino": "^7.8.1",
+        "pino-multi-stream": "^6.0.0",
+        "under-pressure": "^5.8.0",
+        "uuid": "^8.3.2"
+    }
+}
