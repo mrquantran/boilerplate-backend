@@ -20,5 +20,37 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@map("_Users")
+  session Session[]
+  Role    Role[]
+  @@map("_User")
+}
+
+model Session {
+  id           String   @unique
+  accessToken  String?  @unique
+  refreshToken String?  @unique
+  valid        Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  // Relation fields
+  user   User @relation(fields: [userId], references: [id])
+  userId Int
+
+  @@map("_Session")
+}
+
+model Role {
+  id           Int      @id @default(autoincrement())
+  name         String   @unique
+  pagesAllowed String[]
+  permissions  String[]
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  // Relation fields
+  user   User @relation(fields: [userId], references: [id])
+  userId Int
+
+  @@map("_Role")
 }

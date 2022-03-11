@@ -5,9 +5,11 @@
     "main": "index.js",
     "scripts": {
         "seed": "docker compose exec backend npx prisma db seed --preview-feature",
+        "prisma:dashboard": "docker compose exec backend npx prisma studio",
         "db:console": "docker compose exec postgres psql -h localhost -U postgres -d mydb",
         "rebuild:be": "docker compose build backend && docker compose rm --stop backend && docker compose up -d backend",
         "docker:db:migrate": "docker compose run backend npm run migrate",
+        "migrate": "docker compose exec backend npx prisma migrate dev",
         "test": "echo \"Error: no test specified\" && exit 1",
         "format:check": "prettier --check .",
         "format:write": "prettier --write .",

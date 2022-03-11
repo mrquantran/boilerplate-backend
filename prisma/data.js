@@ -7,4 +7,13 @@ const users = [
     },
 ]
 
-module.exports = { users }
+const roles = [
+    {
+        name: 'master_admin',
+        pagesAllowed: ['dashboard'],
+        permissions: ['create_accounts'],
+        user: 'quantran2381@gmail.com',
+    },
+]
+
+module.exports = { users, roles }
