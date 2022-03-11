@@ -7,8 +7,8 @@ const lib = require('api/lib')
 
 ;(async () => {
     const config = envSchema(envConfig)
+    console.log(config)
     const { logger } = lib
-
     try {
         const server = await init({ config })
         await run(server)
